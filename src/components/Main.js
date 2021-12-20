@@ -1,10 +1,15 @@
 import React from 'react'
 import "./Main.css"
+import Product from './Product'
 
 export default function Main() {
     return (
-        <div>
-            <h1>This is the main part</h1>
+        <div className='main'>
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
         </div>
     )
 }
