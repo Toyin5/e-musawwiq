@@ -1,5 +1,15 @@
+:root{
+    clr--light:#F8FBF8;
+    clr--dark:#afbbf2;
+    clr--drk:#d3fff3;
+    clr--accent:#292e1e;
+    clr--accent1:#7f0799;
+    clr--accent2:#9649cb;
+}
+
 body{
     margin: 0;
     padding: 0;
     background-color: #F8FBF8;
 }
+
