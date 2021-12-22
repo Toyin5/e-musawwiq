@@ -9,11 +9,12 @@ import { collection, getDocs } from 'firebase/firestore'
 export default function Main() {
 
     const [products, setProducts] = useState([])
-
+    const toAdd = [];
     useEffect( async() => {
         const querySnapshot = await getDocs(collection(database, "products"));
-        querySnapshot.docs.forEach(doc => console.log(doc.data()));
-    })
+        querySnapshot.docs.forEach(doc => toAdd.push(doc.data()));
+        setProducts([...products, ...toAdd])
+    }, [database])
 
     return (
         <div className='main'>
