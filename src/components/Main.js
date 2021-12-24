@@ -14,12 +14,12 @@ export default function Main() {
         const querySnapshot = await getDocs(collection(database, "products"));
         querySnapshot.docs.forEach(doc => toAdd.push(doc.data()));
         setProducts([...products, ...toAdd])
-    }, [database])
+    }, [])
 
     return (
         <div className='main'>
             {products.map(pro => 
-               <Product name = {pro.name} img = {pro.imgSrc} price={pro.price} desc = {pro.desc} key={pro.name}  />
+               <Product name = {pro.name} link = {pro.link} img = {pro.imgSrc} price={pro.price} desc = {pro.desc} key={pro.name}  />
             )}
         </div>
     )

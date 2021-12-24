@@ -5,11 +5,11 @@ import "./Product.css"
 export default function Product({...props}) {
     return (
         <div className='product'>
-            <h3>{props.name}</h3>
-            <img src={props.img} alt='productImg' />
+            <h5>{props.name}</h5>
+            <img src={props.img} alt={props.name} />
             <p>{props.desc}</p>
-            <p>{props.price}</p>
-            <button><a href='#home' target="_blank">Buy</a></button>
+            <p>${props.price}</p>
+            <button role="button"><a href={props.link} target="_blank">Buy</a></button>
         </div>
     )
 }
