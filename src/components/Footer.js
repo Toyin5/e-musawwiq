@@ -3,8 +3,8 @@ import "./Footer.css"
 
 export default function Footer() {
     return (
-        <div className='footer'>
+        <footer className='footer'>
             <p>&copy; FoMuLa 2021 | All rights reserved</p>
-        </div>
+        </footer>
     )
 }
