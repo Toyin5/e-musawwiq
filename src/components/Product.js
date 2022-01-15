@@ -9,7 +9,7 @@ export default function Product({...props}) {
             <img src={props.img} alt={props.name} />
             <p>{props.desc}</p>
             <p>${props.price}</p>
-            <button role="button"><a href={props.link} target="_blank">Buy</a></button>
+            <button><a href={props.link} target="_blank" rel='noreferrer'>Buy</a></button>
         </div>
     )
 }

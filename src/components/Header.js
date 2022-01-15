@@ -24,7 +24,7 @@ export default function Header({...props}) {
     return (
             <div className="header">
                 <div>
-                    <img src={logo} alt="logo" />
+                    <a href="/"><img src={logo} alt="logo" /></a>
                 </div>
                     <nav class="nav">
                     {(toggleMenu || screenWidth > 500) && (

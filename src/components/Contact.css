@@ -4,3 +4,27 @@
     padding: 0;
     /* border: 1px solid red; */
 }
+
+.contact{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    align-items:center;
+    height:85vh;
+}
+
+.contact-text{
+    text-transform:capitalize;
+    text-align:center;
+    color:#968282;
+}
+
+.contact-links{
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 500px){
+    .contact{
+        height: 75vh;
+    }
+}

@@ -17,4 +17,3 @@ const database = getFirestore(app);
 // firebase.firestore().settings({ experimentalForceLongPolling: true });
 
 export default database;
-

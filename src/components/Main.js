@@ -10,17 +10,6 @@ import {FaSearch} from "react-icons/fa"
 
 
 export default function Main() {
-    // function handleSearch(e){
-    //     if (e.target.value === "") {
-    //         setProducts([...toAdd])
-    //     }
-    //     toAdd.map((item) => {
-    //         if (item.name.includes(e.target.value)) {
-    //             setProducts(item)
-    //         }
-    //     })
-    // }
-
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const [search, setSearch] = useState("")
@@ -44,20 +33,23 @@ export default function Main() {
             <div className='main'>
                 {(loading) ? 
                     <Loader /> :
-                    products.filter(pro => {
-                        if (search === "") {
-                            return pro
-                        } else if (pro.name.toLowerCase().includes(search.toLowerCase())){
-                            return pro
-                        }
-                    }).map(pro => 
-                    <Product name = {pro.name} 
-                    link = {pro.link} 
-                    img = {pro.imgSrc} 
-                    price={pro.price} 
-                    desc = {pro.desc} 
-                    key={pro.name}  />
-                    )}
+                    <div className='products'>
+                        { products.filter(pro => {
+                                if (search === "") {
+                                    return pro
+                                } else if (pro.name.toLowerCase().includes(search.toLowerCase())){
+                                    return pro
+                                }
+                            }).map(pro => 
+                            <Product name = {pro.name} 
+                            link = {pro.link} 
+                            img = {pro.imgSrc} 
+                            price={pro.price} 
+                            desc = {pro.desc} 
+                            key={pro.name}  />
+                            )}
+                    </div>
+                    }
             </div>
         </div>
     )

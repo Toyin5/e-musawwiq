@@ -1,11 +1,17 @@
 .main{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     gap: 10px;
 }
+ .products{ 
+    display: grid;
+    gap:2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+} 
+
 .search {
     margin-top: 15px;
     position: absolute;
@@ -41,6 +47,7 @@
   cursor: pointer;
   font-size: 20px;
 }
+
 @media screen and (max-width: 500px){
     .search {
       margin-top: 10px;

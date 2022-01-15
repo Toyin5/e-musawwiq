@@ -57,23 +57,15 @@
 }
 
 ::-webkit-input-placeholder{
-    color: #67f50e;
+    color: var(--clr-light);
 }
 ::-moz-input-placeholder{
-    color: #67f50e;
+    color: var(--clr-light);
 }
 ::-ms-input-placeholder{
-    color: var(--clr-accent);
-}
-::-webkit-input-placeholder:focus{
     color: var(--clr-light);
 }
-::-moz-input-placeholder:focus{
-    color: var(--clr-light);
-}
-::-ms-input-placeholder:focus{
-    color: var(--clr-light);
-}
+
 
 .submit{
     background: var(--clr-accent);
@@ -85,10 +77,11 @@
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
     .report_form{
         flex-direction: column;
         margin: auto;
+        height: 70vh;
     }
     .msg textarea{
         height: 80px;
