@@ -1,0 +1,37 @@
+.categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:2em;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* position:fixed; */
+    /* height: 10vh; */
+}
+
+.categories::-webkit-scrollbar{
+    display: none;
+}
+
+.categories  button{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+    background: #F8FBF8;
+    color: #222222;
+}
+
+.categories button a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.active{
+    border-bottom: 2px solid #222222;
+}
