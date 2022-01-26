@@ -7,9 +7,11 @@ import { useState , useEffect} from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import Loader from './Loader'
 import {FaSearch} from "react-icons/fa"
+import Categories from './Categories'
+import {Routes, Route} from "react-router-dom"
+import Food from './Categories/Food'
 
-
-export default function Main() {
+export default function Main({...props}) {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const [search, setSearch] = useState("")
@@ -20,6 +22,8 @@ export default function Main() {
         if (toAdd.length !== 0) setLoading(false)
         setProducts([...products, ...toAdd])
     }, [])
+
+    
     
     return (
         <div>
@@ -30,8 +34,8 @@ export default function Main() {
                     <FaSearch />
                 </button>
             </div>
-            <div className='main'>
-                {(loading) ? 
+            <Categories />
+            {(loading) ? 
                     <Loader /> :
                     <div className='products'>
                         { products.filter(pro => {
@@ -41,7 +45,8 @@ export default function Main() {
                                     return pro
                                 }
                             }).map(pro => 
-                            <Product name = {pro.name} 
+                            <Product 
+                            name = {pro.name} 
                             link = {pro.link} 
                             img = {pro.imgSrc} 
                             price={pro.price} 
@@ -50,7 +55,13 @@ export default function Main() {
                             )}
                     </div>
                     }
-            </div>
+                    <Routes>
+                        <Route path="/food" element={<Food products = {products} setProducts = {setProducts} />} />
+                        <Route path="/phone" element={<Food />} />
+                        <Route path="/electronics" element={<Food />} />
+                        <Route path="/clothing" element={<Food />} />
+                        <Route path="/services" element={<Food />} />
+                    </Routes>
         </div>
     )
 }

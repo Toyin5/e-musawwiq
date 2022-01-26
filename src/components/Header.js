@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import logo from '../1.png'
 import "./Header.css"
 import {FaEllipsisV} from "react-icons/fa"
+import { Link } from 'react-router-dom'
 export default function Header({...props}) {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -24,14 +25,14 @@ export default function Header({...props}) {
     return (
             <div className="header">
                 <div>
-                    <a href="/"><img src={logo} alt="logo" /></a>
+                    <Link to="/"><img src={logo} alt="logo" /></Link>
                 </div>
                     <nav class="nav">
                     {(toggleMenu || screenWidth > 500) && (
                         <ul className="list">
-                            <li className="items"><a href="/">Home</a></li>
-                            <li className="items"><a href="/report">Report a bug</a></li>
-                            <li className="items"><a href="/contact">Contact Us</a></li>
+                            <li className="items"><Link to="/">Home</Link></li>
+                            <li className="items"><Link to="/report">Report a bug</Link></li>
+                            <li className="items"><Link to="/contact">Contact Us</Link></li>
                         </ul>)}
                     <button className="nav-toggle btn" aria-label="toggle navigation" onClick={toggleNav}>
                         <FaEllipsisV />

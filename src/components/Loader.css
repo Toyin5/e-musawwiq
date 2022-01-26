@@ -13,23 +13,18 @@
     justify-content: center;
 }
 .card {
+    width: 100%;
     background-color: #F8FBF8;
     padding: 1rem;
-    border-radius: .3rem;
+    border-radius: .5rem;
     z-index: -2;
     position: relative;
-    /* box-shadow: 0 4px 94px rgba(0,0,0,.1); */
 }
 .loading-wrapper {
-    width: 8rem;
-    height: 75vh;
+    width: 100%;
+    height: 64vh;
     margin: 0 auto;
     position: relative;
-}
-@media screen and (max-width: 500px){
-    .loading-wrapper {
-        height: 65vh;
-    }
 }
 .loading-bar,
 .loading-bar:before,

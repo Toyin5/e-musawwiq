@@ -10,7 +10,7 @@ function App() {
       <div>
         <Routes>
           {/*Main/Contact/Report Componenst */}
-          <Route path='/' exact element={<Main />}/>
+          <Route path='/*' exact element={<Main />} />
           <Route path='/contact' element={<Contact />}/>
           <Route path='/report' element={<Report />}/>
         </Routes>

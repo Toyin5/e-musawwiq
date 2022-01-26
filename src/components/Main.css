@@ -1,16 +1,23 @@
 .main{
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
+    width: 100%;
     gap: 10px;
 }
- .products{ 
+.products{ 
     display: grid;
+    margin-top: 10px;
+    margin-bottom:10px;
+    /* flex-direction: column;
+    justify-content: center; */
     gap:2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-} 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }  
+
+
+  
 
 .search {
     margin-top: 15px;
@@ -54,5 +61,9 @@
       width: 350px;
       /* margin-left: 70px; */
       padding-left: 40px;
+    }
+    .products{
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr 1fr;
     }
 }

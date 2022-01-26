@@ -1,17 +1,23 @@
 .product{
-    margin: 0;
-    padding: 0;
+    /* margin-top: 100px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    width: 300px;
-    height: 45vh;
+    width: 200px;
+    height: 200px;
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3); */
 }
+
+@media screen and (max-width: 500px){
+    .product{
+        width: 160px;
+    }
+}
+
 /* 
 .product{
     display: grid;
@@ -22,12 +28,12 @@
     border-radius: 20px;
 
 } */
-
+.modal img,
 .product img{
-    width: max-content;
-    height: 25vh;
+    width: 150px;
+    height: 80px;
     /* object-fit: contain; */
-    border-radius: 5px;
+    border-radius: 2em;
 }
 
 .product p:nth-child(1){
@@ -35,6 +41,7 @@
     align-content: center;
     justify-content: center;
 }
+.modal button,
 .product button{
     display: flex;
     flex-direction: column;
@@ -51,17 +58,27 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
-.product button:focus {
-    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-    outline: 0;
-}
-.product button:hover,
-.product button a:hover{
+.modal button:hover,
+.modal button a:hover,
+.product button:hover{
     background-color: #DFDEDF;
     color: grey;
 }
 
-.product button a{
+
+.modal a{
     text-decoration: none;
     color: #DFDEDF;
+}
+
+.keep-mounted-modal-title{
+    text-align: center;
+}
+
+.iconClose{
+    color: red;
+}
+
+.iconBtn{
+  margin-left: 250px;
 }
