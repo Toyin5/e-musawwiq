@@ -16,12 +16,20 @@ export default function Main({...props}) {
     const [loading, setLoading] = useState(true)
     const [search, setSearch] = useState("")
     const toAdd = [];
-    useEffect( async() => {
+
+    useEffect(() => {
+        async function fetchData() { 
         const querySnapshot = await getDocs(collection(database, "products"));
         querySnapshot.docs.forEach(doc => toAdd.push(doc.data()));
         if (toAdd.length !== 0) setLoading(false)
-        setProducts([...products, ...toAdd])
+        setProducts([...products, ...toAdd])}
+        fetchData();
     }, [])
+
+    const filterItem = (toFilter) => {
+        const filteredProducts = products.filter((item) => item.category[1].toLowerCase() === toFilter.toLowerCase())
+        setProducts(filteredProducts)
+    }
 
     
     
@@ -56,11 +64,11 @@ export default function Main({...props}) {
                     </div>
                     }
                     <Routes>
-                        <Route path="/food" element={<Food products = {products} setProducts = {setProducts} />} />
-                        <Route path="/phone" element={<Food />} />
-                        <Route path="/electronics" element={<Food />} />
-                        <Route path="/clothing" element={<Food />} />
-                        <Route path="/services" element={<Food />} />
+                        <Route path="/food" element={filterItem("food")}/>
+                        <Route path="/phone" element={filterItem("phone")} />
+                        <Route path="/electronics" element={filterItem("electronics")} />
+                        <Route path="/clothing" element={filterItem("clothing")} />
+                        <Route path="/services" element={filterItem("services")} />
                     </Routes>
         </div>
     )

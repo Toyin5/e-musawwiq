@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 import "./Categories.css"
 
 
-function toggleClass(e){
-    // e.preventDefault()
-}
 
 function Categories() {
+
+    
+    function toggleClass(e){
+        // e.preventDefault()
+    }
+
     return (
         <div className='categories'>
             <button><Link to='/' onClick={toggleClass}>All</Link></button>
